@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Hello SyntaxHighlighter</title>
+	<script type="text/javascript" src="scripts/shCore.js"></script>
+	<script type="text/javascript" src="scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="scripts/shBrushJava.js"></script>
+	<script type="text/javascript" src="scripts/shBrushSql.js"></script>
+	<link type="text/css" rel="stylesheet" href="styles/shCoreDefault.css"/>
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+
+<body style="background: white; font-family: Helvetica">
+
+<h1>Hello SyntaxHighlighter</h1>
+<h1>http://alexgorbatchev.com/SyntaxHighlighter/</h1>
+<pre class="brush: sql">
+CREATE TABLE emp_merge_test 
+AS SELECT empno, deptno, sal FROM emp WHERE deptno IN (10, 20);
+
+</pre>
+
+<pre class="brush: js">
+function helloSyntaxHighlighter()
+{
+	return "hi!";
+}
+
+</pre>
+
+<pre class="brush: java;">
+public class Test {
+	public static void main(String ar[]) {
+		try {
+			AccessToken accesstoken = new AccessToken("1028046152-8u0vgdScG5rld9tZ7oHERBMfQkf1wcFLI5k7XX3", "pQwRps7gpoMGTiiWEe0OMaaCJNpgqmk1fg9wHhSo1yKVV");
+			Twitter twitter = TwitterFactory.getSingleton();
+			twitter.setOAuthConsumer("031mBTL3ygwk29VL2a25M3bN7", "DKCN7nAqaRMlgT9ymtVbhMLzmsBzVmzrCZpEmKwB41GYh36htT");
+			twitter.setOAuthAccessToken(accesstoken);
+			User user = twitter.verifyCredentials();
+
+			List<Status> list = twitter.getUserTimeline(); 
+			System.out.println("타임라인 계정:"+user.getScreenName());
+			for(Status status : list) {
+				System.out.println("작성자:"+status.getUser().getScreenName());
+				System.out.println("타임라인내용:"+status.getText());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
+</pre>
+</body>
+</html>
